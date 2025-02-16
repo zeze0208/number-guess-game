@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-image: url('https://lifehopeandtruth.com/cache/images/I-Have-Set-Before-You-Life-and-Death-large-life_and_death_1200_800_80.jpg'); /* 새로운 배경 이미지 */
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: 50vh;
+}
+
+
+h1 {
+    color: #2C3E50;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+
+#result-area {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 5px;
+    width: auto;
+    text-align: center;
+    color: #34495E;
+}
+
+#chance-area {
+    font-size: 1em;
+    margin: 10px auto;
+    padding: 5px;
+    width: auto;
+    text-align: center;
+    color: #717171;
+}
+
+#user-input {
+    width: 90%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 1.2em;
+    margin: 15px auto;
+    display: block;
+    text-align: center;
+    border: 2px solid #BDC3C7;
+    border-radius: 8px;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background 0.3s ease-in-out;
+    color: white;
+}
+
+#play-button:disabled{
+    background-color: rgb(180, 180, 180);
+    cursor: not-allowed;
+}
+
+#play-button {
+    background-color: #3498DB;
+}
+
+#play-button:hover {
+    background-color: #2980B9;
+}
+
+
+
+#reset-button {
+    background-color: #E67E22;
+}
+
+#reset-button:hover {
+    background-color: #D35400;
+}
+
+
+#result-gif {
+    width: 250px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 10px;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #user-input {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    #result-gif {
+        width: 200px;
+    }
+}
