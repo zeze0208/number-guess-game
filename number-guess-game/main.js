@@ -92,7 +92,7 @@ function play() {
 //     playButton.disabled = true;
 //     resultGif.src = 
 //     resultGif.style.display = "block";
-
+//확인
 
   if (!gameOver) {
     history.push(userValue);
