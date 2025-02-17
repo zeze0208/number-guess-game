@@ -5,9 +5,11 @@ let resultArea = document.getElementById("result-area");
 let resultGif = document.getElementById("result-gif");
 let resetButton = document.getElementById("reset-button");
 let chanceArea = document.getElementById("chance-area");
-let chances = 5;
+let chances = 3;
 let gameOver = false;
 let history = [];
+let answerArea = document.getElementById("answer-area")
+let historyArea = document.getElementById("history-area")
 
 // UP / DOWN / 정답 GIF 리스트
 const upGifs = [
@@ -38,6 +40,12 @@ userInput.addEventListener("focus", function () {
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
   console.log("정답", computerNum);
+  answerArea.textContent = `정답은 ${computerNum}`;
+
+}
+
+function updateHistory() {
+    historyArea.textContent = `${history.join(", ")}`;
 }
 
 function play() {
@@ -55,8 +63,10 @@ function play() {
     return;
   }
 
+
   chances--;
   chanceArea.textContent = `기회는 ${chances}번 뿐!`;
+
 
   if (userValue < computerNum) {
     resultArea.textContent = "⬆️ UP!";
@@ -73,7 +83,7 @@ function play() {
     playButton.disabled = true;
     return;
   } 
-  
+
   if (chances === 0) {
     resultArea.textContent = "앗, 실패했어요!";
     chanceArea.textContent = "Reset후 재도전하세요";
@@ -81,7 +91,12 @@ function play() {
     resultGif.style.display = "block";
     gameOver = true;
     playButton.disabled = true;
+    return;
   } 
+
+//   history.push(userValue);
+//   updateHistory(); 중복실행행
+
 
 //   if (chances < 1) {
 //     gameOver = true;
@@ -96,10 +111,8 @@ function play() {
 
   if (!gameOver) {
     history.push(userValue);
+    updateHistory();
   }
-
-
-
 
 }
 
@@ -114,9 +127,11 @@ function reset() {
   pickRandomNum();
   resultArea.textContent = "숫자를 넣어보세요";
   resultGif.style.display = "none";
-  chances = 5;
+  chances = 3;
   history = [];
+  historyArea.textContent = "";
   chanceArea.textContent = `기회는 ${chances}번!`;
+  gameOver = false;
   playButton.disabled = false;
 }
 
